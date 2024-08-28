@@ -14,7 +14,7 @@ services:
   api:
     build: 
       context: ./api
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
     volumes:
       - type: bind
         source: ./api/src 
@@ -23,7 +23,7 @@ services:
       - "3001:80"
   #pour la BDD en dev on déclare directement l'image mongo
   db:
-    image: mongo
+    image: mongo:7
     volumes:
       - type: volume
         source: dbtest
